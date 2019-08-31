@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="tws.repository.ParkingLotMapper">
+    <select id="selectAll" resultType="tws.entity.ParkingLot">
+        select * from `parkinglot`;
+    </select>
+
+    <insert id="insert">
+        insert  into parkinglot(parkingLotID,capacity) values(#{parkinglot.parkingLotID},#{parkinglot.capacity});
+    </insert>
+
+    <select id="selectByEmployeeId" resultType="tws.entity.ParkingLot">
+        select * from `parkinglot` where employeeId = #{id};
+    </select>
+
+    <update id="insertParkingBoy">
+        update `parkinglot` set employeeId = #{employeeId} where parkingLotID = #{parkingLotID};
+    </update>
+
+</mapper>

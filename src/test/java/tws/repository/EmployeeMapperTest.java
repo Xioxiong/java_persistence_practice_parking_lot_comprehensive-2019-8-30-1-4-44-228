@@ -35,7 +35,7 @@ public class EmployeeMapperTest {
     }
 
     @Test
-    public void shouldFetchAllEmployees() {
+    public void should_Fetch_All_Employees() {
         // given
         jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'zhangsan', 21);");
         // when
